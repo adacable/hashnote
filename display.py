@@ -12,7 +12,12 @@ def display(hashtagsin):
 def hashtags(stringin):
     return re.findall("#(\w+)",stringin)
 def filterForHashtags(hashtagsin):
-    infile = open("out.txt")
+    try:
+        infile = open("out.txt")
+    except IOError:
+        infile = open("out.txt","w")
+        infile.close()
+        infile = open("out.txt")
     stringlist = infile.readlines()
     for hashtagin in hashtagsin:
         stringlist =  [i for i in stringlist if hashtagin in hashtags(i)]
@@ -32,4 +37,9 @@ def displayify(stringin,current):
     currenta = str(current)
     return re.sub("http://(\S+)",replLink,re.sub("#(\w+)",replHashTag,stringin))
 def write(note):
-    open("out.txt","a").write(note + "\n")
+    try:
+        open("out.txt","a").write(note + "\n")
+    except IOError:
+        infile = open("out.txt","w")
+        infile.close()
+        infile = open("out.txt")
