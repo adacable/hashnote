@@ -1,0 +1,54 @@
+@import "vars.scss";
+body{
+    margin:0;
+    height:100%;
+    overflow:hidden;
+}
+.keys{
+    padding:1em;
+    width:33%;
+    float:left;
+    height:100%;
+    overflow:auto;
+    a{
+        text-decoration:none;
+        font-weight:bold;
+    }
+}
+.notes{
+    padding:1em;
+    height:100%;
+    overflow:auto;
+    padding-bottom:3em;
+}
+body{
+    background-color:$bg;
+    color:$text;
+    font-family:sans;
+    }
+a{
+    color:$text;
+    text-decoration:underline;
+}
+.homelink{
+    width:100%;
+    padding:1em 0;
+    display:block;
+    background-color:black;
+    color:white;
+    text-align:center;
+}
+a.external{
+    color:lighten($text,50%);
+}
+a:visited{
+    font-style:italic;
+}
+.scale{
+    padding:4px;
+    display:inline-block;
+}
+.note{
+    width:100%;
+    padding:0 0 1em 0;
+}
