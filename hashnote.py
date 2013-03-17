@@ -25,10 +25,7 @@ class HelloWorld(object):
     savepage.exposed = True
     def partialhashtags(self,term=None,numberOfHashtags=3):
         hashtags = [i for i in display.display("").keys() if term in i]
-        returnstring = "["
-        for hashtag in hashtags:
-            returnstring +='"%s",'%hashtag
-        return returnstring[:-1] + "]"
+        return json.dumps(hashtags)
     partialhashtags.exposed = True
     def notes(self,searchterm=None):
         if searchterm == None:
